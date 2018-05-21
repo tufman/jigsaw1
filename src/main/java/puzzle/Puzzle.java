@@ -133,29 +133,13 @@ public class Puzzle {
     }
 
     private void createAndMapPuzzleElements() {
-        ExecutorService executor = null;
-        if (isMultiThread) {
-            executor = Executors.newFixedThreadPool(numOfTheads);
-            System.out.println("Indexing by multiThread");
-            //ExecutorService executor = Executors.newFixedThreadPool(numOfTheads);
-            while (stackOfGoodLines.size() != 0) {
-                executor.submit(() -> {
-                    indexingPuzzle();
-                });
-            }
-            System.out.println();
-            //Consider using invoke all and list of runnables
-            //executor.shutdown();
-        } else {
-            System.out.println("Indexing by Single Thread");
-            while (stackOfGoodLines.size() != 0) {
-                indexingPuzzle();
-            }
-        }
-        if (executor != null){
-            executor.shutdown();
+        System.out.println("Indexing by Single Thread");
+        while (stackOfGoodLines.size() != 0) {
+            indexingPuzzle();
         }
     }
+
+
 
     private void indexingPuzzle() {
         //stackOfGoodLines.pop() is synchronaized by java....

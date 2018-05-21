@@ -69,6 +69,17 @@ public class PuzzleManager {
         if ((filePath == null) || (filePathToSave == null)) {
             printUsgae();
         }
+
+        //TODO - remove for debug..
+        printParams();
+    }
+
+    private void printParams() {
+        System.out.println("InputFile = " + filePath);
+        System.out.println("OutputFile = " + filePathToSave);
+        System.out.println("Rotation = " + isRotation);
+        System.out.println("Is Multithread = " + isMultiThread);
+        System.out.println("Number of threads = " + numOfThreads);
     }
 
     private void printUsgae() {
