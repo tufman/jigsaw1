@@ -9,6 +9,9 @@
 
 package puzzle;
 
+import com.google.gson.Gson;
+import puzzle.puzzleClient.PuzzlePieces;
+
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -116,6 +119,15 @@ public class Puzzle {
                 addErrorWrongElementFormat(id, line);
             }
         }
+
+        //TODO: need to verify the correct place for this operation .
+        PuzzlePieces puzzlePieces =  new PuzzlePieces("test", false ,stackOfGoodLines );
+        Gson gson  =  new Gson();
+        String jsonTemplate =  gson.toJson(puzzlePieces);
+        System.out.println(jsonTemplate);
+
+
+
 
         if (idsForErrorsNotInRange.size() > 0) {
             addErrorForIDsNotInRange();
