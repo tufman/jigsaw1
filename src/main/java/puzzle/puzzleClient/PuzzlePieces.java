@@ -20,9 +20,9 @@ public class PuzzlePieces {
     private void stackToArr(Stack<ArrayList<Integer>> inputStackFromFileReader) {
         int counter = 0;
         while  (inputStackFromFileReader.size()>0 ){
-            inputStackFromFileReader.pop();
-            int [] vals = new int[5];
-            puzzlePieces[counter++] = new PuzzlePiece(vals);
+//            inputStackFromFileReader.pop();
+//            int [] vals = new int[5];
+            puzzlePieces[counter++] = new PuzzlePiece(inputStackFromFileReader.pop());
         }
     }
 }
