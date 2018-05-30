@@ -122,6 +122,9 @@ public class Puzzle {
         }
 
         //TODO: need to verify the correct place for this operation .
+                // rotate flagshould be fixed - not hardcoded .
+                // add json response - from server  - happy flow .
+
         PuzzlePieces puzzlePieces =  new PuzzlePieces("test", false ,stackOfGoodLines );
         Gson gson  =  new Gson();
         String jsonTemplate =  gson.toJson(puzzlePieces);
